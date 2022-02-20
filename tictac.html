@@ -1,0 +1,223 @@
+
+<html>
+<head>
+    <title>The tic-tac-toe game</title>
+<script type="text/javascript" src="/ShareBaseAPI/ruxitagentjs_2SVfghjqrt_10153180914150608.js" data-dtconfig="rid=RID_945511600|rpid=-1331623845|domain=sharebase.com|reportUrl=/ShareBaseAPI/rb_d46c6b31-31a9-4609-a04e-61591d91ff02|srms=1;1;;;|featureHash=2SVfghjqrt|md=1=a.sb-app__toolbar-user-name|lastModification=1544129899929|dtVersion=10153180914150608|tp=500,50,0,1|rdnt=2|agentUri=/ShareBaseAPI/ruxitagentjs_2SVfghjqrt_10153180914150608.js"></script>
+<script src="tic.js"></script>
+<style>
+
+td
+{
+    width:50px;
+    height:50px;
+    border: solid 1px green;
+    text-align:center;
+    font-size:20pt;
+}
+
+td:hover
+{
+    background-color: blue;
+    cursor:pointer;
+}
+</style>
+<img src ="data:image/png;base64,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">
+<script type="text/javascript">
+var winners = new Array();
+var player1Selections = new Array();
+var player2Selections = new Array();
+var timer;
+var numberOfPlayers = 2;
+var currentPlayer = 0;
+var move = 0;
+var points1 = 0;    // player 1 points
+var points2 = 0;    // player 2 points
+var size = 3;
+
+// introduction
+
+alert("Welcome to this tic-tac-toe game. Please start by pressing ask button. If you choose to proceed, enter your name and click start.");
+function welcome(){
+    var uInput = document.querySelector("#userInput");
+    var uValue = uInput.value;
+    alert("Wassup " + uValue);
+}
+
+function goodBye(){
+    alert("Thanks for playing. SEE YOU NEXT TIME");
+}
+
+// the game board
+function drawBoard() {
+    var Parent = document.getElementById("game");
+    var counter = 1;
+
+    while (Parent.hasChildNodes()) {
+        Parent.removeChild(Parent.firstChild);
+    }
+    // used the knowledge of for loops from java
+    for (s = 0; s < 3; s++) {
+        var row = document.createElement("tr");
+        // found some code online. W3schools
+        for (r = 0; r < 3; r++) {
+            var col = document.createElement("td");
+            col.id = counter;
+            col.innerHTML = counter;
+
+            var handler = function(e) {
+                if (currentPlayer == 0) {
+                    this.innerHTML = "X";
+                    player1Selections.push(parseInt(this.id));
+                    player1Selections.sort(function(a, b) { return a - b });
+                }
+
+                else {
+                    this.innerHTML = "O";
+                    player2Selections.push(parseInt(this.id));
+                    player2Selections.sort(function(a, b) { return a - b });
+                }
+
+                move++;
+                var isWin = checkWinner();
+
+                // keep track of the points for each player
+                // 1 point for each win
+                if (isWin)
+                {
+                    if(currentPlayer == 0)
+                        points1++;
+                    else
+                        points2++;
+
+                    document.getElementById("player1").innerHTML = points1;
+                    document.getElementById("player2").innerHTML = points2;
+
+                    reset();        // remove all x and o and get it back to original
+                    drawBoard();    // redraws the game board
+                }
+
+                else
+                {
+                    if (currentPlayer == 0)
+                        currentPlayer = 1;
+                    else
+                        currentPlayer = 0;
+                    this.removeEventListener('click', arguments.callee); // found this by research
+                }
+            };
+
+            col.addEventListener('click', handler);
+
+            row.appendChild(col);
+            counter++;
+        }
+
+        Parent.appendChild(row);
+    }
+
+    loadAnswers();
+}
+
+// resetting the board
+function reset()
+{
+    currentPlayer = 0;
+    player1Selections = new Array();
+    player2Selections = new Array();
+}
+
+// I didn't make the board empty since I couldn't figure it out.
+function loadAnswers()
+{
+    winners.push([1, 2, 3]);
+    winners.push([4, 5, 6]);
+    winners.push([7, 8, 9]);
+    winners.push([1, 4, 7]);
+    winners.push([2, 5, 8]);
+    winners.push([3, 6, 9]);
+    winners.push([1, 5, 9]);
+    winners.push([3, 5, 7]);
+}
+
+function checkWinner() {
+    // check if current player has a winning hand
+    // only stsrt checking when player x has size number of selections
+    var win = false;
+    var playerSelections = new Array();
+
+
+    // used some of the code and ideas from my project in java
+    if (currentPlayer == 0)
+        playerSelections = player1Selections;
+    else
+	playerSelections = player2Selections;
+
+    if (playerSelections.length >= size) {
+
+        for (i = 0; i < winners.length; i++) {
+            var sets = winners[i];  // winning hand
+            var setFound = true;
+
+            for (r = 0; r < sets.length; r++) {
+                // check if number is in current players hand
+                // if not, break, not winner
+                var found = false;
+
+                // players hand
+                for (s = 0; s < playerSelections.length; s++) {
+                    if (sets[r] == playerSelections[s]) {
+                        found = true;
+                        break;
+                    }
+                }
+                // used prior knowledge
+                // value not found in players hand
+                // not a valid set, move on
+                if (found == false) {
+                    setFound = false;
+                    break;
+                }
+            }
+
+            if (setFound == true) {
+                win = true;
+                break;
+            }
+        }
+    }
+
+    return win;
+}
+
+window.onload = drawBoard; // drawing the board on the window. Got this from my CS teacher
+</script>
+</head>
+
+<body>
+<div style="text-align:center;margin:0 auto;width:50%;padding-top:20px;">
+<br/>
+<div style="float:left; color:blueviolet">
+Player 1
+
+<div style="font-size:30pt;" id="player1">
+0
+</div>
+</div>
+
+<table id="game" style="float:left;margin-left:20px; color: lightcoral">
+</table>
+
+<div style="float:left;margin-left:20px; color: blueviolet">
+Player 2
+<div id="player2" style="font-size:30pt;">0</div>
+</div>
+<input type="text" id="userInput">
+<button onclick="ask()">ASK</button>
+<button onclick="welcome()">Start</button>
+
+<div class="clear"></div>
+
+<button onclick="goodBye()">FUN</button>
+</div>
+</body>
+</html>
